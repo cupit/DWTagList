@@ -48,6 +48,7 @@
 
 @interface DWTagView : UIView
 
+@property (nonatomic, strong) UIImageView           *backgroundImage;
 @property (nonatomic, strong) UIButton              *button;
 @property (nonatomic, strong) UILabel               *label;
 @property (nonatomic, weak)   id<DWTagViewDelegate> delegate;

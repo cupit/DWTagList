@@ -318,6 +318,9 @@
 {
     self = [super init];
     if (self) {
+        _backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self addSubview: _backgroundImage];
+        
         _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         [_label setTextColor:TEXT_COLOR];
         [_label setShadowColor:TEXT_SHADOW_COLOR];
@@ -361,6 +364,8 @@
     self.frame = CGRectMake(0, 0, textSize.width+padding.width*2, textSize.height);
     _label.frame = CGRectMake(padding.width, 0, MIN(textSize.width, self.frame.size.width), textSize.height);
     _label.font = font;
+    
+    _backgroundImage.frame = self.bounds;
     
     [_button setAccessibilityLabel:self.label.text];
 }
